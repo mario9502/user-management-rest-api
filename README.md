@@ -4,7 +4,7 @@ User management is a simple REST-API using the standard HTTP methods –  GET, P
 
 ## Description
 
-It was build with Spring Boot with Maven on Java 17. For database was used MySQL and there is no needs for installing any other apps. The app is runnunig on port 8080.
+It was build with Spring Boot with Maven on Java 17. For database was used MySQL so if not present MySQL server needs to be instelled. The app is runnunig on port 8080.
 For database properties check the "application.yaml' file in the "resources" folder.
 
 ## Getting Started
@@ -25,6 +25,31 @@ Its support one User Entity with the following fields:
 * Date of Birth
 * Phone Number
 * E-mail Address
+
+## Testing Functionality
+
+There is a REST Client Api where I have created a few web pages with simple design (Basic HTML) that can test all the functionality.
+You can get it from here: https://github.com/mario9502/user-management-rest-client
+
+Or you can use Postman to send request on the following URL's:
+
+* POST Request on http://localhost:8080/users/add - Add user // Accept JSON as Body
+* GET Request on http://localhost:8080/users/all - Get all users
+* GET Request on http://localhost:8080/users/allSorted - Get all users sorted
+* GET Request on http://localhost:8080/users/{id} - Find User By Id
+* GET Request on http://localhost:8080/users/email={email} - Find User By Email
+* GET Request on http://localhost:8080/users/all/year={year} - Find Users Born Before Year
+* PUT Request on http://localhost:8080/users/email={email} - Edit User By Email // Accept JSON as Body
+* DELETE Request on http://localhost:8080/users/{email} - Delete User By Email
+
+**JSON format example: 
+{
+    "firstName": "First",
+    "lastName": "Last",
+    "dateOfBirth": "1973-09-29",
+    "phoneNumber": "0878363699",
+    "email": "mail@mail"
+}
 
 ### Features
 
@@ -84,28 +109,3 @@ Accept:
 
 Functionality:
 * Deletes the user with the given email if it exist in the DB.
-
-## Testing Functionality
-
-There is a REST Client Api where I have created a few web pages with simple design(Basic HTML) that can test test all the functionality.
-You can get it from here: https://github.com/mario9502/user-management-rest-client
-
-Or you can use Postman to send request on the following URL's:
-
-* POST Request on http://localhost:8080/users/add - Add user // Accept JSON as Body
-* GET Request on http://localhost:8080/users/all - Get all users
-* GET Request on http://localhost:8080/users/allSorted - Get all users sorted
-* GET Request on http://localhost:8080/users/{id} - Find User By Id
-* GET Request on http://localhost:8080/users/email={email} - Find User By Email
-* GET Request on http://localhost:8080/users/all/year={year} - Find Users Born Before Year
-* PUT Request on http://localhost:8080/users/email={email} - Edit User By Email // Accept JSON as Body
-* DELETE Request on http://localhost:8080/users/{email} - Delete User By Email
-
-**JSON format example: 
-{
-    "firstName": "First",
-    "lastName": "Last",
-    "dateOfBirth": "1973-09-29",
-    "phoneNumber": "0878363699",
-    "email": "mail@mail"
-}
