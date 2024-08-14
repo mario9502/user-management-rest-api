@@ -19,6 +19,7 @@ public class UserNoIdInfoDto {
     @NotNull
     private LocalDate dateOfBirth;
 
+    @Size(min = 5, max = 20)
     private String phoneNumber;
 
     @Email
