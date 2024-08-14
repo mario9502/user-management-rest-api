@@ -109,3 +109,8 @@ Accept:
 
 Functionality:
 * Deletes the user with the given email if it exist in the DB.
+
+
+# User Management HATEOAS
+
+Here you can find and REST API with HATEOAS which I created separately (or at least I tried...): https://github.com/mario9502/user-management-hateoas
